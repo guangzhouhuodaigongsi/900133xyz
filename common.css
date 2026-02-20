@@ -1,0 +1,160 @@
+/* common.css - 海运网站通用样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Microsoft Yahei", "PingFang SC", Arial, sans-serif;
+}
+body {
+    color: #333;
+    background-color: #F5F7FA;
+    line-height: 1.6;
+}
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+/* 页眉导航 */
+.header {
+    background-color: #0F4C81;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+}
+.logo span {
+    color: #4A90E2;
+}
+.nav-list {
+    display: flex;
+    list-style: none;
+}
+.nav-item {
+    margin-left: 30px;
+}
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+.nav-link:hover, .nav-link.active {
+    color: #4A90E2;
+}
+/* 移动端汉堡菜单 */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 3px 0;
+}
+/* 按钮通用样式 */
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #4A90E2;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.btn:hover {
+    background-color: #0F4C81;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(15, 76, 129, 0.2);
+}
+/* 页脚 */
+.footer {
+    background-color: #0F4C81;
+    color: #fff;
+    padding: 40px 0 20px;
+    margin-top: 60px;
+}
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+.footer-col {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+.footer-col h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 10px;
+}
+.footer-col h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background-color: #4A90E2;
+}
+.footer-col p, .footer-col a {
+    color: #e0e0e0;
+    font-size: 14px;
+    line-height: 1.8;
+    text-decoration: none;
+}
+.footer-col a:hover {
+    color: #4A90E2;
+}
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 14px;
+    color: #e0e0e0;
+}
+/* 响应式适配 */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    .nav-list {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        flex-direction: column;
+        background-color: #0F4C81;
+        width: 100%;
+        padding: 20px 0;
+        transition: left 0.3s;
+    }
+    .nav-list.active {
+        left: 0;
+    }
+    .nav-item {
+        margin: 10px 20px;
+    }
+    .footer-top {
+        flex-direction: column;
+    }
+}

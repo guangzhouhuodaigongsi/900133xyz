@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - 页面找不到了</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", "PingFang SC", Arial, sans-serif;
+        }
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        /* 背景装饰点 */
+        body::before, body::after {
+            content: "";
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            z-index: 0;
+        }
+        body::before {
+            top: -100px;
+            right: -100px;
+        }
+        body::after {
+            bottom: -100px;
+            left: -100px;
+        }
+        /* 404核心容器 */
+        .error-container {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 60px 40px;
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        /* 404数字样式 */
+        .error-code {
+            font-size: 120px;
+            font-weight: 700;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+        /* 提示文案 */
+        .error-title {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .error-desc {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+        /* 按钮样式 */
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background: #667eea;
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: #5a6edb;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        .btn-default {
+            background: #f5f7fa;
+            color: #666;
+        }
+        .btn-default:hover {
+            background: #e8ebf0;
+            transform: translateY(-2px);
+        }
+        /* 适配移动端 */
+        @media (max-width: 576px) {
+            .error-code {
+                font-size: 80px;
+            }
+            .error-title {
+                font-size: 20px;
+            }
+            .error-desc {
+                font-size: 14px;
+            }
+            .error-container {
+                padding: 40px 20px;
+            }
+            .btn {
+                padding: 10px 25px;
+                font-size: 14px;
+            }
+        }
+        /* 渐入动画 */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-code">404</div>
+        <h1 class="error-title">哎呀，页面走丢了 😕</h1>
+        <p class="error-desc">
+            你访问的页面不存在、已被删除，或者网址输入错误啦～<br>
+            建议检查网址是否正确，或返回首页继续浏览。
+        </p>
+        <div class="btn-group">
+            <a href="/" class="btn btn-primary">返回首页</a>
+            <button class="btn btn-default" onclick="history.back()">返回上一页</button>
+        </div>
+    </div>
+
+    <script>
+        // 可选：添加页面刷新提示（点击刷新按钮）
+        const refreshBtn = document.createElement('button');
+        refreshBtn.innerText = '刷新页面';
+        refreshBtn.className = 'btn btn-default';
+        refreshBtn.onclick = () => window.location.reload();
+        document.querySelector('.btn-group').appendChild(refreshBtn);
+    </script>
+</body>
+</html>

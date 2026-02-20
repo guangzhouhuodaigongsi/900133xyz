@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>公司介绍 - 力力海运</title>
+    <link rel="stylesheet" href="http://900133.xyz/css/css1.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", "SimHei", sans-serif;
+        }
+        
+        body {
+            background-color: #f5f8fa;
+            color: #333;
+            line-height: 1.6;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            padding: 0 15px;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+        
+        /* 头部样式 */
+        header {
+            background: linear-gradient(135deg, #1a2980 0%, #26d0ce 100%);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0, 0, 100, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            font-size: 28px;
+            margin-right: 10px;
+        }
+        
+        .logo h1 {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .logo span {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 20px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        
+        nav a:hover, nav a.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* 页面内容样式 */
+        .page {
+            padding: 30px 0 60px;
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .page-title {
+            color: #1a2980;
+            font-size: 32px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #26d0ce;
+            position: relative;
+            text-align: center;
+        }
+        
+        .page-title:after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background-color: #1a2980;
+        }
+        
+        .section-title {
+            color: #1a2980;
+            font-size: 26px;
+            margin: 40px 0 25px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: #26d0ce;
+        }
+        
+        /* 公司介绍页样式 */
+        .company-hero {
+            background: linear-gradient(rgba(26, 41, 128, 0.85), rgba(38, 208, 206, 0.8)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 20px;
+            border-radius: 10px;
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .company-hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+        
+        .company-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .company-hero h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .company-hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .hero-stat {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            min-width: 150px;
+        }
+        
+        .hero-stat-number {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .hero-stat-text {
+            font-size: 16px;
+        }
+        
+        .company-intro {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 50px;
+        }
+        
+        .intro-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .intro-text {
+            flex: 1;
+        }
+        
+        .intro-text h3 {
+            color: #1a2980;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        .intro-text p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        
+        .intro-image {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .intro-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .mission-vision {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .mission-card, .vision-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            border-top: 4px solid #1a2980;
+        }
+        
+        .mission-card i, .vision-card i {
+            font-size: 48px;
+            color: #1a2980;
+            margin-bottom: 20px;
+        }
+        
+        .mission-card h3, .vision-card h3 {
+            color: #1a2980;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        
+        /* 时间线样式 */
+        .timeline-section {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            margin: 50px 0;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background-color: #26d0ce;
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            margin-bottom: 50px;
+            position: relative;
+            width: 50%;
+            padding: 0 40px;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            position: relative;
+            border-left: 4px solid #1a2980;
+        }
+        
+        .timeline-content:before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            width: 20px;
+            height: 20px;
+            background-color: #1a2980;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #26d0ce;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content:before {
+            right: -52px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content:before {
+            left: -52px;
+        }
+        
+        .timeline-year {
+            color: #1a2980;
+            font-weight: bold;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-title {
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        /* 核心价值观 */
+        .core-values {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .value-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid #1a2980;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #1a2980 0%, #26d0ce 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 30px;
+        }
+        
+        .value-card h3 {
+            color: #1a2980;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        
+        /* 团队介绍 */
+        .team-section {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            margin: 50px 0;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .team-member {
+            background: #f9f9f9;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+        
+        .member-img {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .member-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .team-member:hover .member-img img {
+            transform: scale(1.05);
+        }
+        
+        .member-info {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .member-info h4 {
+            color: #1a2980;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+        
+        .member-position {
+            color: #26d0ce;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .member-desc {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        /* 全球网络 */
+        .global-network {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            margin: 50px 0;
+        }
+        
+        .network-map {
+            position: relative;
+            height: 400px;
+            background: #eef7ff;
+            border-radius: 8px;
+            margin: 30px 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .network-points {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .network-point {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background-color: #1a2980;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 0 0 2px #26d0ce;
+        }
+        
+        .network-labels {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .network-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .label-color {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #1a2980;
+        }
+        
+        /* 底部样式 */
+        footer {
+            background-color: #1a2980;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-logo {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        
+        .footer-contact {
+            margin: 20px 0;
+        }
+        
+        .footer-contact p {
+            margin-bottom: 5px;
+        }
+        
+        .highlight {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .copyright {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 992px) {
+            .intro-content {
+                flex-direction: column;
+            }
+            
+            .timeline:before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 80px;
+                padding-right: 0;
+                left: 0 !important;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content:before,
+            .timeline-item:nth-child(even) .timeline-content:before {
+                left: -50px;
+                right: auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-wrap: wrap;
+            }
+            
+            .nav-toggle {
+                display: block;
+            }
+            
+            nav {
+                width: 100%;
+                margin-top: 15px;
+                display: none;
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav li {
+                margin: 5px 0;
+            }
+            
+            nav a {
+                display: block;
+                padding: 10px 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .company-hero {
+                padding: 60px 15px;
+            }
+            
+            .company-hero h2 {
+                font-size: 32px;
+            }
+            
+            .company-hero p {
+                font-size: 18px;
+            }
+            
+            .hero-stat {
+                min-width: 120px;
+                padding: 15px;
+            }
+            
+            .hero-stat-number {
+                font-size: 28px;
+            }
+            
+            .company-intro, .timeline-section, .team-section, .global-network {
+                padding: 25px;
+            }
+            
+            .page-title {
+                font-size: 28px;
+            }
+            
+            .section-title {
+                font-size: 24px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .company-hero {
+                padding: 50px 15px;
+            }
+            
+            .mission-vision {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-stats {
+                gap: 15px;
+            }
+            
+            .hero-stat {
+                min-width: calc(50% - 15px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-ship"></i>
+                    <div>
+                        <h1>力力海运</h1>
+                        <span>全球海运解决方案</span>
+                    </div>
+                </div>
+                
+                <button class="nav-toggle" id="navToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav id="mainNav">
+                    <ul>
+                        <li><a href="http://900133.xyz/" class="nav-link">首页</a></li>
+                        <li><a href="http://900133.xyz/article.html" class="nav-link">行业动态</a></li>
+                        <li><a href="http://900133.xyz/company.html" class="nav-link active">公司介绍</a></li>
+                        <li><a href="http://900133.xyz/contact.html" class="nav-link">联系我们</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- 公司介绍页 -->
+    <section class="page">
+        <div class="container">
+            <!-- 公司英雄区域 -->
+            <div class="company-hero">
+                <div class="company-hero-content">
+                    <h2>力力海运 - 全球海运领导者</h2>
+                    <p>自2005年成立以来，力力海运始终致力于为客户提供专业、高效、可靠的全球海运服务，成为连接世界贸易的重要桥梁和值得信赖的合作伙伴。</p>
+                    
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <div class="hero-stat-number">18年</div>
+                            <div class="hero-stat-text">行业服务经验</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-number">50+</div>
+                            <div class="hero-stat-text">运营船舶</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-number">200+</div>
+                            <div class="hero-stat-text">全球港口</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-number">800+</div>
+                            <div class="hero-stat-text">专业团队</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 公司简介 -->
+            <div class="company-intro">
+                <h2 class="page-title">公司简介</h2>
+                
+                <div class="intro-content">
+                    <div class="intro-text">
+                        <h3>专业全球海运服务提供商</h3>
+                        <p>力力海运成立于2005年，总部位于中国，是一家专注于全球海运服务的现代化综合物流企业。我们致力于为全球客户提供高效、安全、可靠的海运解决方案，连接世界各大港口，推动全球贸易的顺畅流通。</p>
+                        <p>经过近二十年的发展，力力海运已经成长为行业内具有重要影响力的海运服务提供商，业务网络覆盖全球50多个国家和地区的200多个主要港口。我们拥有一支经验丰富的专业团队，熟悉全球主要港口的操作流程和海关规定，能够为客户提供定制化的海运解决方案。</p>
+                        <p>我们始终坚持"客户至上、安全高效、诚信经营、持续创新"的经营理念，不断提升服务品质，优化运营效率，为客户创造更大的价值。无论是集装箱运输、散货运输还是多式联运，我们都能确保货物安全、准时地送达目的地。</p>
+                    </div>
+                    <div class="intro-image">
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="力力海运船队">
+                    </div>
+                </div>
+                
+                <!-- 使命与愿景 -->
+                <div class="mission-vision">
+                    <div class="mission-card">
+                        <i class="fas fa-bullseye"></i>
+                        <h3>我们的使命</h3>
+                        <p>通过创新的海运解决方案，连接全球贸易，为客户创造卓越价值，推动全球供应链的高效运转，促进世界经济的繁荣发展。</p>
+                    </div>
+                    
+                    <div class="vision-card">
+                        <i class="fas fa-eye"></i>
+                        <h3>我们的愿景</h3>
+                        <p>成为全球客户首选的综合海运物流合作伙伴，引领行业可持续发展，打造世界一流的海运服务品牌。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 发展历程 -->
+            <div class="timeline-section">
+                <h2 class="section-title">发展历程</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2005年</div>
+                            <div class="timeline-title">力力海运成立</div>
+                            <p>在深圳正式成立，专注于亚洲区域内的近洋航线服务，开启专业海运服务之路。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2008年</div>
+                            <div class="timeline-title">开辟东南亚航线</div>
+                            <p>成功开辟中国至东南亚主要港口的航线，服务网络首次扩展至国际市场。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2010年</div>
+                            <div class="timeline-title">开通远洋航线</div>
+                            <p>开通第一条远洋航线，连接中国与欧洲，开始全球化战略布局。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2015年</div>
+                            <div class="timeline-title">船队规模扩大</div>
+                            <p>船队规模扩大一倍，建立全球服务网络，覆盖200多个主要港口。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2018年</div>
+                            <div class="timeline-title">获得行业认证</div>
+                            <p>通过ISO 9001质量管理体系认证，服务品质获得国际认可。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2020年</div>
+                            <div class="timeline-title">数字化转型</div>
+                            <p>启动数字化转型，建立智能海运平台，实现全程可视化追踪。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2023年</div>
+                            <div class="timeline-title">绿色航运计划</div>
+                            <p>推出绿色航运计划，承诺到2030年将碳排放减少40%，引领行业可持续发展。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 核心价值观 -->
+            <div class="company-intro">
+                <h2 class="section-title">核心价值观</h2>
+                
+                <div class="core-values">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>诚信经营</h3>
+                        <p>坚持诚信经营，对客户、合作伙伴和员工保持透明和诚实，建立长期稳定的合作关系。</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>追求卓越</h3>
+                        <p>追求卓越服务，持续改进运营效率和服务质量，为客户提供超出期望的服务体验。</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>团队协作</h3>
+                        <p>重视团队协作，与客户和合作伙伴建立长期共赢关系，共同应对挑战，实现共同发展。</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3>社会责任</h3>
+                        <p>积极履行社会责任，推动绿色航运和可持续发展，为保护海洋环境贡献力量。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 管理团队 -->
+            <div class="team-section">
+                <h2 class="section-title">管理团队</h2>
+                <p style="margin-bottom: 30px;">力力海运拥有一支经验丰富、专业高效的管理团队，他们在海运行业拥有深厚的专业知识和丰富的管理经验，是公司持续发展的核心力量。</p>
+                
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-img">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="张明远">
+                        </div>
+                        <div class="member-info">
+                            <h4>张明远</h4>
+                            <div class="member-position">创始人兼CEO</div>
+                            <div class="member-desc">拥有25年海运行业经验，曾任职于多家国际航运公司，2010年加入力力海运，带领公司实现跨越式发展。</div>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-img">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="李思颖">
+                        </div>
+                        <div class="member-info">
+                            <h4>李思颖</h4>
+                            <div class="member-position">首席运营官</div>
+                            <div class="member-desc">负责全球航线规划与运营管理，在物流优化方面有丰富经验，拥有15年海运运营管理经验。</div>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-img">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="王浩然">
+                        </div>
+                        <div class="member-info">
+                            <h4>王浩然</h4>
+                            <div class="member-position">首席财务官</div>
+                            <div class="member-desc">拥有15年财务管理经验，擅长企业融资和风险控制，曾主导公司多次成功融资项目。</div>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-img">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="陈宇航">
+                        </div>
+                        <div class="member-info">
+                            <h4>陈宇航</h4>
+                            <div class="member-position">首席技术官</div>
+                            <div class="member-desc">主导公司数字化转型，在物流科技领域有深入研究，成功打造智能海运平台。</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 全球网络 -->
+            <div class="global-network">
+                <h2 class="section-title">全球服务网络</h2>
+                <p>力力海运建立了覆盖全球的完善服务网络，通过50多艘现代化船舶连接世界各大港口，为客户提供高效、便捷的海运服务。</p>
+                
+                <div class="network-map">
+                    <!-- 简化版世界地图示意 -->
+                    <div class="network-points">
+                        <div class="network-point" style="top: 30%; left: 15%;"></div> <!-- 亚洲 -->
+                        <div class="network-point" style="top: 35%; left: 45%;"></div> <!-- 欧洲 -->
+                        <div class="network-point" style="top: 40%; left: 25%;"></div> <!-- 中东 -->
+                        <div class="network-point" style="top: 50%; left: 30%;"></div> <!-- 非洲 -->
+                        <div class="network-point" style="top: 45%; left: 75%;"></div> <!-- 北美 -->
+                        <div class="network-point" style="top: 70%; left: 50%;"></div> <!-- 南美 -->
+                        <div class="network-point" style="top: 70%; left: 85%;"></div> <!-- 大洋洲 -->
+                    </div>
+                </div>
+                
+                <div class="network-labels">
+                    <div class="network-label">
+                        <div class="label-color"></div>
+                        <span>亚洲地区：覆盖中国、日本、韩国、新加坡等主要港口</span>
+                    </div>
+                    <div class="network-label">
+                        <div class="label-color"></div>
+                        <span>欧洲地区：覆盖鹿特丹、汉堡、安特卫普等主要港口</span>
+                    </div>
+                    <div class="network-label">
+                        <div class="label-color"></div>
+                        <span>美洲地区：覆盖洛杉矶、纽约、温哥华等主要港口</span>
+                    </div>
+                    <div class="network-label">
+                        <div class="label-color"></div>
+                        <span>大洋洲地区：覆盖悉尼、墨尔本、奥克兰等主要港口</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-ship"></i> 力力海运
+                </div>
+                <p>专业全球海运解决方案提供商</p>
+                <div class="footer-contact">
+                    <p>服务热线：<span class="highlight">13711127975</span></p>
+                    <p>微信联系：<span class="highlight">13711127975</span></p>
+                    <p>电子邮件：business@lili-shipping.com</p>
+                </div>
+                <div class="copyright">
+                    <p>© 2023 力力海运 版权所有</p>
+                    <p style="margin-top: 5px;">让全球贸易更简单，让海运服务更高效</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 导航菜单切换
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.getElementById('navToggle');
+            const mainNav = document.getElementById('mainNav');
+            
+            // 移动端导航菜单切换
+            if (navToggle) {
+                navToggle.addEventListener('click', function() {
+                    mainNav.classList.toggle('active');
+                });
+            }
+            
+            // 处理窗口大小变化
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    mainNav.classList.remove('active');
+                }
+            });
+            
+            // 导航链接点击效果
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // 移除所有链接的active类
+                    navLinks.forEach(item => item.classList.remove('active'));
+                    // 为当前点击的链接添加active类
+                    this.classList.add('active');
+                    
+                    // 在移动端点击后关闭导航菜单
+                    if (window.innerWidth <= 768) {
+                        mainNav.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+
+<script>(function() {var _53code = document.createElement("script");_53code.src = "https://tb.53kf.com/code/code/f5b9271f395dcc5bb502a91391554164/1";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(_53code, s);})();</script>
+</body>
+</html>
